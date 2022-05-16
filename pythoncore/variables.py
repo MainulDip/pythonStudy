@@ -9,7 +9,7 @@ variable name must starts with letters or underscores
 x = 1   # int
 y = 2.5 # float
 name = 'John' # str
-booleanCheck = True # bool
+booleanCheck = True # bool, also note the uppercasing
 
 # Multiple assaignment variables
 a, b, check = (1, 'Hello', True)
