@@ -44,3 +44,14 @@ print(person3)
 # Clear
 person.clear()
 print(person)
+
+# Get length
+print(len(person3))
+
+# List/array of dictionary
+people_list = [
+    {'name': "Jonny", 'age': 30},
+    {'name': "Nicola", 'age' : 47}
+]
+
+print(people_list[0]['name'])
