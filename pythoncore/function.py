@@ -16,3 +16,6 @@ print(getSum(4,3))
 
 # A lambda function is a small anonymous function.
 # A lambda function can take any number of arguments, but can only have one expression. Very similar to JS arrow function or kotlin lambda
+
+getSumLambda = lambda num1, num2 : num1 + num2
+print(getSumLambda(7,7))
