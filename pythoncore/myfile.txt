@@ -1,0 +1,2 @@
+Learning python and diving deeper into tensorflow :)
+ also learnig the integration of the AI with mobile and web toolkit
