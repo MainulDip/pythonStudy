@@ -9,3 +9,6 @@ Link:
 ### Django
 Documentation Link: 
 Project Link: 
+Tasks:
+- Creating Project and App
+- Create Models
