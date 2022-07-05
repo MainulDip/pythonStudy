@@ -88,3 +88,22 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 ```
+Then need to add app level's apps.py class inside the project's settings.py's installed apps list/array. 
+```py
+INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
+    .......
+]
+```
+
+This will tell the projects command line tool to look inside of the app's (polls) directory to generate command on that context.
+
+Now to run the migration from project's directory run this
+```sh
+python manage.py makemigrations polls
+# This will create a new migration file inside app levels migration directory (polls\migrations\0001_initial.py)
+
+python .\manage.py migrate
+# This will commit migration
+```
+
