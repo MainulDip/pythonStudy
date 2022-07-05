@@ -111,4 +111,41 @@ python .\manage.py migrate
 ```sh
 python manage.py shell
 # This will open interactive shell to play with database as model defined
+from polls.models import Question, Choice
+from django.utils import timezone
+
+# questions list
+Question.objects.all()
+# adding Question
+q = Question(question_text = 'What is your favourite Python Framework?', pub_date=timezone.now())
+# saving into satabase
+q.save()
+# return id and text
+q.id
+q.question_text()
+
+#getting question lists
+Question.objects.filter(id=1) # return array/list
+Question.objects.get(pk=1) # return single item
+
+# show all the options of the question
+q.choice_set.all()
+
+# add some options to the questions for voting
+q.choice_set.create(choice_text="Django", votes=0)
+q.choice_set.create(choice_text="Flask", votes=0)
+q.choice_set.create(choice_text="Web2py", votes=0)
+
+# show all the options of the question
+q.choice_set.all()
 ```
+
+### Creating Superuser Admin:
+Out-of-the-box django provide some defaul functionality like manage users, create super user, etc.
+```sh
+python manage.py createsuperuser
+# this will ask for input name and password to create the superuser
+```
+
+### Adding Admin Functionality For Apps:
+App level's admin.py is used to provide admin functionalities

@@ -4,7 +4,7 @@
 # Create dictionary
 from pickle import POP
 
-
+# dictionary create/define syntax
 person = {
     'first_name' : 'John',
     'last_name' : 'Doe',
