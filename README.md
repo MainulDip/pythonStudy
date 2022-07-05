@@ -7,6 +7,7 @@ Link:
 
 
 ### Django
+
 Documentation Link: 
 Project Link: 
 
@@ -15,3 +16,4 @@ Tasks:
 - urls.py in both project and app level
 - adding views and calling that from app level's urls.py
 - Create Models
+- interactive shell by "python manage.py shell" to interact with database (sqlite3)

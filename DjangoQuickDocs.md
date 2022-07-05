@@ -107,3 +107,8 @@ python .\manage.py migrate
 # This will commit migration
 ```
 
+### Model interactive shell:
+```sh
+python manage.py shell
+# This will open interactive shell to play with database as model defined
+```

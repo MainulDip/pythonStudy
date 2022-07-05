@@ -1,3 +1,4 @@
+# Virtualized Environment Directory
 venv/
 
 # Django #
@@ -5,7 +6,6 @@ venv/
 *.pot
 *.pyc
 __pycache__
-db.sqlite3
 media
 
 # Backup files # 
