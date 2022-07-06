@@ -11,6 +11,9 @@ class ChoiceInline(admin.TabularInline): # admin.StackedInline for vertical list
     extra = 0 # how many extra row after lisitng all options
 class QuestionAdmin(admin.ModelAdmin):
     # fields = ['pub_date', 'question_text']
+
+    
+    # fieldsets accept tuple
     fieldsets = [
         (None,               {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date']}),
