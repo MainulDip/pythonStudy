@@ -3,5 +3,20 @@ from .models import Question, Choice
 
 # Register your models here.
 
-admin.site.register([Question, Choice])
+# admin.site.register([Question, Choice])
 # admin.site.register(Choice)
+
+class ChoiceInline(admin.TabularInline): # admin.StackedInline for vertical listing
+    model = Choice
+    extra = 0 # how many extra row after lisitng all options
+class QuestionAdmin(admin.ModelAdmin):
+    # fields = ['pub_date', 'question_text']
+    fieldsets = [
+        (None,               {'fields': ['question_text']}),
+        ('Date information', {'fields': ['pub_date']}),
+    ]
+
+    inlines = [ChoiceInline]
+
+
+admin.site.register(Question, QuestionAdmin)
