@@ -183,3 +183,7 @@ admin.site.site_header = "Polls Admin Header"
 admin.site.site_title = "title Polls"
 admin.site.index_title = "Welocome Admin From index_title"
 ```
+
+### Adding Template Directory:
+To keep all the template files in an organised place, place the templates folder in projects directory and customise the settings.py's template config to point out the Template directory. Also place template files separate by app's name.
+Docs: https://docs.djangoproject.com/en/4.0/intro/tutorial07/
