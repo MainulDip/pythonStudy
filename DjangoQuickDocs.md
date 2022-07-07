@@ -187,3 +187,28 @@ admin.site.index_title = "Welocome Admin From index_title"
 ### Adding Template Directory:
 To keep all the template files in an organised place, place the templates folder in projects directory and customise the settings.py's template config to point out the Template directory. Also place template files separate by app's name.
 Docs: https://docs.djangoproject.com/en/4.0/intro/tutorial07/
+
+### Layout Extending and index view in Template Directory:
+```html
+<!-- layout.html or base.html -->
+<html>
+    <body>
+        <div class="col-md-6 m-auto">
+            {% block content %}{% endblock content %}
+        </div>
+    </body>
+</html>
+
+<!-- index.html -->
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center mb-3">Polls Questions</h1>
+{% if latest_question_list %} {% for question in latest_question_list %}
+<div class="card mb-3">
+  <div class="card-body">
+    <p class="lead">{{ question.question_text }}</p>
+  </div>
+</div>
+{% endfor %} {% else %}
+<p class="">No Polls</p>
+{% endif %} {% endblock %}
+```

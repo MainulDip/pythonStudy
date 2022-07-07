@@ -17,6 +17,7 @@ Tasks:
 - adding views and calling that from app level's urls.py
 - Create Models
 - interactive shell by "python manage.py shell" to interact with database (sqlite3)
+- template directory register inside settings.py, layout.html extending in index.html
 
 ### Type hinting:
 PEP 484 introduced type hints, a.k.a. type annotations. While its main focus was function annotations, it also introduced the notion of type comments to annotate variables:
