@@ -23,3 +23,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Question, QuestionAdmin)
+
+admin.site.site_header = "Polls Admin Header"
+admin.site.site_title = "title Polls"
+admin.site.index_title = "Welocome Admin From index_title"
