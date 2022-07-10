@@ -212,3 +212,24 @@ Docs: https://docs.djangoproject.com/en/4.0/intro/tutorial07/
 <p class="">No Polls</p>
 {% endif %} {% endblock %}
 ```
+
+### Dynamic Links With UrlParams, Receiving Params in urls.py (Route):
+```html
+
+<!-- Dynamic Links With UrlParams -->
+<a href="{% url 'polls:detail' question.id %}" class="btn btn-primary btn-sm">Vote Now</a>
+```
+```py
+# urls.py
+path('<int:question_id>', views.detail, name='detail')
+
+# views.py
+# Show single question and choices
+def detail(request, question_id):
+    print_arguments(request)
+    try:
+        question = Question.objects.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404('Question Doesn\'t Found')
+    return render(request, 'polls/results.html', { 'question': question })
+```
