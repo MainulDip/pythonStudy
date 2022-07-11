@@ -1,6 +1,9 @@
 ## Django Quick Docs Overview:
 This Docs is a personalised jump start documentation for django app.
 
+### Architecture:
+Django is an MVT (Model, View, Template) based framework. Where View acts like "Controller" in MVC.
+
 ### Install and runserver:
  
  - Setup venv virtualizatio env: From inside Directory "python -m venv .venv" to setup venv. A common directory location for a virtual environment is .venv
@@ -34,10 +37,12 @@ this will create a new folder inside our project. inside the newly createdapp
   - apps.py : app's config file
   - models.py : for creating database models/tables and or relationships
   - tests.py : test codes
-  - views.py : for rendering serverside template or REST APIs
+  - views.py : It's the controller, for rendering serverside template or REST APIs
 
 ### Routes and urls.py | project level and app level:
 Its good practice to add a urls.py routes file for every apps inside aproject and include that url file inside project's urls.py
+Docs : https://docs.djangoproject.com/en/4.0/topics/http/urls/
+Uses: https://docs.djangoproject.com/en/4.0/intro/tutorial03/
 ```py
 # Project level urls.py
 urlpatterns = [
@@ -204,11 +209,11 @@ Docs: https://docs.djangoproject.com/en/4.0/intro/tutorial07/
 {% extends 'base.html' %} {% block content %}
 <h1 class="text-center mb-3">Polls Questions</h1>
 {% if latest_question_list %} {% for question in latest_question_list %}
-<div class="card mb-3">
-  <div class="card-body">
-    <p class="lead">{{ question.question_text }}</p>
-  </div>
-</div>
+<p class="lead">{{ question.question_text }}</p>
+<a href="{% url 'polls:details' question.id %}">Vote Now</a>
+{% comment %} polls:details will mathch with urls name defiened in urls.py urlpatterns {% endcomment %}
+<a href="/polls/results/{{question.id}}">Show Results</a>
+{% comment %} Can also be defiened like this {% endcomment %}
 {% endfor %} {% else %}
 <p class="">No Polls</p>
 {% endif %} {% endblock %}

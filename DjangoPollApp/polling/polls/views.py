@@ -24,3 +24,9 @@ def detail(request, question_id):
     # return render(request, 'polls/results.html', { 'question': question })
     response = "You're looking at the results of question %s."
     return HttpResponse(response % question_id)
+
+
+# Show Voting Results
+def result(request, question_id):
+    response = "Voting result is %s."
+    return HttpResponse(response % question_id)
