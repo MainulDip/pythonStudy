@@ -61,6 +61,7 @@ urlpatterns = [
 from django.http import HttpResponse
 
 # this index method will be called from app level's urls.py route file
+# https://docs.djangoproject.com/en/4.0/ref/request-response/ for request object
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 ```

@@ -1,4 +1,5 @@
 from cgi import print_arguments
+from pprint import PrettyPrinter
 from django.http import Http404, HttpResponse
 from django.shortcuts import render
 from .models import Question, Choice
@@ -15,9 +16,11 @@ def index(request):
 
 # Show single question and choices
 def detail(request, question_id):
-    print_arguments(request)
+    print(request.method, 'cool')
     try:
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404('Question Doesn\'t Found')
-    return render(request, 'polls/results.html', { 'question': question })
+    # return render(request, 'polls/results.html', { 'question': question })
+    response = "You're looking at the results of question %s."
+    return HttpResponse(response % question_id)
