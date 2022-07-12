@@ -62,6 +62,7 @@ urlpatterns = [
 ```
   
 ### Views:
+Views acts like controller (MVC). Note Django uses MVT (Model, View, Template)
 ```py
 from django.http import HttpResponse
 
@@ -69,6 +70,7 @@ from django.http import HttpResponse
 # https://docs.djangoproject.com/en/4.0/ref/request-response/ for request object
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
+    # All Django wants is that HttpResponse Or raising an exception
 ```
 
 ### Creating/Adding Models:
@@ -223,11 +225,20 @@ Docs: https://docs.djangoproject.com/en/4.0/intro/tutorial07/
 ```html
 
 <!-- Dynamic Links With UrlParams -->
+<!-- {% url %} template tag help easily change URLs on projects with a lot of templates if name argument is defined in the path() inside urls.py -->
 <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary btn-sm">Vote Now</a>
+
+<!-- We can also use hard urls, but it is hard if we change url structure in future inside urls.py -->
+<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+<!-- {% comment %} Can also be defiened like this, but url template tag is conveinent {% endcomment %} -->
+
+<!-- # the 'name' value as called by the {% url %} template tag
+path('<int:question_id>/', views.detail, name='detail'), -->
 ```
 ```py
 # urls.py
 path('<int:question_id>', views.detail, name='detail')
+# <int:question_id>. Using angle brackets “captures” part of the URL and sends it as a keyword argument to the view function. The question_id part of the string defines the name that will be used to identify the matched pattern, and the int part is a converter that determines what patterns should match this part of the URL path. The colon (:) separates the converter and pattern name.
 
 # views.py
 # Show single question and choices
@@ -238,4 +249,23 @@ def detail(request, question_id):
     except Question.DoesNotExist:
         raise Http404('Question Doesn\'t Found')
     return render(request, 'polls/results.html', { 'question': question })
+```
+
+### render() shortcut:
+load a template, fill a context (dictionary) and return an HttpResponse object with the result of the rendered template. Django provides a shortcut
+```py
+# without using render(), we have to use loader.getTemplate(....) and return HttpResponse also importing them
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    template = loader.get_template('polls/index.html')
+    context = {
+        'latest_question_list': latest_question_list,
+    }
+    return HttpResponse(template.render(context, request))
+
+# Using render(), we no longer need to import loader and HttpResponse (you’ll want to keep HttpResponse if you still have the stub methods for detail, results, and vote)
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
 ```
