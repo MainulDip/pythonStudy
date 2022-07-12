@@ -269,3 +269,5 @@ def index(request):
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
 ```
+
+### Sending Dictionary As Context:

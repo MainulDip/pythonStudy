@@ -30,3 +30,8 @@ def detail(request, question_id):
 def result(request, question_id):
     response = "Voting result is %s."
     return HttpResponse(response % question_id)
+
+# Allow to vote
+def vote(request, question_id):
+    response = "Voting result is %s."
+    return HttpResponse(response % question_id)
