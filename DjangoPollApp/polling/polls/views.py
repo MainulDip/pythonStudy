@@ -1,7 +1,7 @@
 from cgi import print_arguments
 from pprint import PrettyPrinter
 from django.http import Http404, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Question, Choice
 
 # Create your views here.
@@ -22,14 +22,18 @@ def detail(request, question_id):
     except Question.DoesNotExist:
         raise Http404('Question Doesn\'t Found')
     # return render(request, 'polls/results.html', { 'question': question })
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+    # response = "You're looking at the results of question %s."
+    # return HttpResponse(response % question_id)
+    return render(request, 'polls/results.html', {'question': question})
+
 
 
 # Show Voting Results
 def result(request, question_id):
-    response = "Voting result is %s."
-    return HttpResponse(response % question_id)
+    # response = "Voting result is %s."
+    # return HttpResponse(response % question_id)
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/results.html', {'question': question})
 
 # Allow to vote
 def vote(request, question_id):

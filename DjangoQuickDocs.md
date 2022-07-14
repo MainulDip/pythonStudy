@@ -271,3 +271,52 @@ def index(request):
 ```
 
 ### Sending Dictionary As Context:
+
+
+### Django Shortcut Methods:
+Official Docs: https://docs.djangoproject.com/en/4.0/topics/http/shortcuts/
+
+- get_object_or_404(klass, *args, **kwargs)
+### Terms:
+:smiley_cat: klass : klass may be a Model, Manager, or QuerySet object
+
+:smiley_cat: *args (Non-Keyword Arguments): variable number of non-keyword Arguments
+
+
+```py
+def myFun(*argv):
+    for arg in argv:
+        print(arg)
+ 
+ 
+myFun('Hello', 'Welcome', 'to', 'Django')
+
+# will print
+# Hello
+# Welcome
+# to
+# GeeksforGeeks
+```
+
+:smiley_cat: **kwargs (Keyword Arguments) : **kwargs is dictionary that holds parameters and can be used by first passing it through a view func
+
+```py
+def fun(req, **kwargs)
+
+# and then get values inside the function like this
+
+kwargs.get('key_name') # The only difference from args is that it uses keywords and returns the values in the form of a dictionary
+
+# Example
+def print_kwargs(**kwargs):
+for key in kwargs:
+    print("The key {} holds {} value".format(key, kwargs[key]))
+
+
+print_kwargs(a=1, b=2, c="Some Text")
+
+#  will print
+# The key a holds 1 value
+# The key b holds 2 value
+# The key c holds Some Text value
+```
