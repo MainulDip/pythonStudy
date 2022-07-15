@@ -309,7 +309,7 @@ kwargs.get('key_name') # The only difference from args is that it uses keywords 
 
 # Example
 def print_kwargs(**kwargs):
-for key in kwargs:
+for key in kwargs: # kwargs is list/array of arguments
     print("The key {} holds {} value".format(key, kwargs[key]))
 
 
@@ -320,3 +320,5 @@ print_kwargs(a=1, b=2, c="Some Text")
 # The key b holds 2 value
 # The key c holds Some Text value
 ```
+
+### More on database query:
