@@ -329,3 +329,9 @@ Docs: https://docs.djangoproject.com/en/dev/topics/http/urls/#reverse-resolution
 ```py
 return HttpResponseRedirect(reverse('polls:results', args=(url_params,)))
 ```
+
+
+### Landing Page Creation:
+```sh
+py manage.py startapp pages
+```
