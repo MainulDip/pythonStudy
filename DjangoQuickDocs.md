@@ -322,3 +322,10 @@ print_kwargs(a=1, b=2, c="Some Text")
 ```
 
 ### More on database query:
+
+### Redirection and URL Reverse For Final URL with params:
+Docs: https://docs.djangoproject.com/en/dev/topics/http/urls/#reverse-resolution-of-urls
+
+```py
+return HttpResponseRedirect(reverse('polls:results', args=(url_params,)))
+```

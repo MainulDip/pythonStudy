@@ -1,7 +1,9 @@
+from ast import Try
 from cgi import print_arguments
 from pprint import PrettyPrinter
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
 from .models import Question, Choice
 
 # Create your views here.
@@ -37,5 +39,19 @@ def result(request, question_id):
 
 # Allow to vote
 def vote(request, question_id):
-    response = "Voting result is %s."
-    return HttpResponse(response % question_id)
+    # response = "Voting result is %s."
+    # return HttpResponse(response % question_id)
+    print(request.POST['choice'])
+    question = get_object_or_404(Question, pk=question_id)
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])
+    except (KeyError, Choice.DoesNotExist):
+        return render(request, 'polls/details.html', {
+            'question': question,
+            'error_message': "You didn't vote yet",
+        })
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+        # return HttpResponseRedirect('polls:results', question_id, question=question)
