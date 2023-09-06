@@ -6,7 +6,7 @@ Link:
 
 
 
-### Django
+### Django:
 
 Documentation Link: 
 Project Link: 

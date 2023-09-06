@@ -3,7 +3,7 @@
 ### MVT Architecture
 Django utilize Model, View, Template Acchitecture. View works like Controller here.  
 
-### Sequence Vs Collection
+### Sequence Vs Collection:
 Lists, tuples, and strings are sequences. 
 Things come out of them in the same order they were put in.
 
