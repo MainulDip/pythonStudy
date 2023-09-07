@@ -71,5 +71,24 @@ Worst case runtime means: the highest time of tries it can take to find a number
   - like Traveler Map for shortest distance
   - 3! = 3*2*1 = 6
   - factorial of 4 = 4! = 4*3*2*1 = 24
+### Recursion and its Depth:
+* Recursive Function: the function that call itself form its body and implement some breaking condition inside it
+* Recursive Depth: the number of time a recursive function call itself until finished, is called Recursive Depth
+### Iterative vs Recursive:
+* Iterative solution is something that is loop based. its opposite of recursion.
+* python favours iterative approach, hence it has Recursive Depth Limit
+* languages those favour recursive function will not have any recursion depth limit
 
- ### Binary Vs Linear Search Efficiency:
+### Functional Languages:
+CS text books back in the days favour functional language coding.
+- in functional language programmer avoid to change function's local variable (make those immutable). Functional language prefer recursion over iterative solution.
+
+### Recursive vs Iterative and Space Complexity:
+- Iterative functions usually have a constant space complexity. consume same amount of space in memory/ram while running and until finished
+
+### Recursion and Tail Optimization or Tail Optimized Language:
+- recursive function needs to allocate new memory on each recursion, hence it consume more memory if the programming language does deal with this. 
+- python is not a tail optimized language like swift. hence it consumes more memory while on recursive implementation.
+* Head vs Tail Recursion: If a function call itself at the beaning of its body, then it is the head recursion. If called at the end, its tail recursion.
+* Tail Call Optimization/Elimination: Language like swift implement these to prevent the increasing ram allocation on recursive function. aka minimize O(log n) space complexity for recursion.
+### Now: 1.49.47
