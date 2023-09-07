@@ -14,7 +14,12 @@ In CS, A set of (optimized) steps a program takes to finish a tasks or solve a p
 * should complete in a finite amount of time
 
 ### Algorithmic Thinking:
-It's the quality of solving computation problem by breaking down problems and grouping with suitable Algorithm.
+These are some approach to solve computation problem by 
+- breaking down the problem into several pieces, each with clearly defined input and output 
+- along with some distinct set of steps that solve all those problem through input ot output
+- and grouping with suitable Algorithm.
+
+NB: it does not come overnight, its practice.
 
 ### Big O || O(n) :
 Its the theoretical definition of the complexity of an algorithm as a function of the size. It's a notation used to describe complexity.
@@ -87,8 +92,8 @@ CS text books back in the days favour functional language coding.
 - Iterative functions usually have a constant space complexity. consume same amount of space in memory/ram while running and until finished
 
 ### Recursion and Tail Optimization or Tail Optimized Language:
-- recursive function needs to allocate new memory on each recursion, hence it consume more memory if the programming language does deal with this. 
-- python is not a tail optimized language like swift. hence it consumes more memory while on recursive implementation.
+- recursive function needs to allocate additional new memory (half of previous call, n->n/2->n/4...) on each recursion, hence it consume more memory if the programming language does not deal with this. 
+- python is not a tail optimized language like swift. hence it consumes more memory (logarithmic memory || O(log n)) while on recursive implementation.
 * Head vs Tail Recursion: If a function call itself at the beaning of its body, then it is the head recursion. If called at the end, its tail recursion.
 * Tail Call Optimization/Elimination: Language like swift implement these to prevent the increasing ram allocation on recursive function. aka minimize O(log n) space complexity for recursion.
 ### Now: 1.49.47
