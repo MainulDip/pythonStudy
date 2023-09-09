@@ -36,3 +36,13 @@ Linked with
 * can be
 - Singly Linked List : carries only after/next link/pointer 
 - Doubly Linked List : carries both before/previous and after/next link/pointers
+
+
+### Merge Sort:
+Has 3 main steps
+- Divide -> Find the midpoint of the list and divide into sublist
+- Conquer -> Recursive sort the sublist created in previous steps
+- Combine -> Merge the sorted sublist created in previous steps
+
+NB:
+- Naively Sorted: when an array/list element has 0 or 1 element inside

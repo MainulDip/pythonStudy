@@ -3,7 +3,7 @@ def linear_search(list, target):
     Returns the index position of the target if found, else return None
     * Algorithm should return something
     * Algorithm should completed in a finite amount of time
-    * produce same result for same input
+    * produce same result for same input || consistent
     """
 
     for i in range(0, len(list)):
