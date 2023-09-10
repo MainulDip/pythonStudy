@@ -4,7 +4,7 @@ def merge_sort(list):
     Returns a new Sorted list
     Has 3 main steps
     : Divide -> Find the midpoint of the list and divide into sublist
-    : Conquer -> Recursive sort the sublist created in previous steps
+    : Conquer -> Recursive sort the sublist created in previous step
     : Combine -> Merge the sorted sublist created in previous steps
     """
 
@@ -21,7 +21,11 @@ def merge_sort(list):
     # this will be called when all recursion is finished
     
     # print(counter, " : ", left," and ", right)
+
+    print("list:", list, left, right, "lengths", len(left), len(right))
     
+    # if len(left) == 2 and len(right) == 2:
+
     return merge(left, right)
 
 def split(list):
@@ -33,8 +37,6 @@ def split(list):
     mid = len(list) // 2
     left = list[:mid] # 0 until mid (will not include the mid itself)
     right = list[mid:] # from mid point to end (will include midpoint)
-
-    print(list, left, right)
 
     return left, right
 
@@ -73,7 +75,7 @@ def merge(left, right):
 
     return l
 
-alist = [9,7,6,4,-4]
+alist = [9,7,6,4, -4, 3]
 result = merge_sort(alist)
 # print(alist)
 print(result)
