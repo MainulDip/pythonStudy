@@ -8,9 +8,7 @@ def merge_sort(list):
     : Combine -> Merge the sorted sublist created in previous steps
     """
 
-    # counter = 0
-    # counter += 1
-
+    # Base logic of recursive functions
     if len(list) <= 1:
         return list # naively sorted also it will break the recursion and return the single element list back to the recursion chain
     
@@ -18,13 +16,7 @@ def merge_sort(list):
     left = merge_sort(left_half)
     right = merge_sort(right_half)
 
-    # this will be called when all recursion is finished
-    
-    # print(counter, " : ", left," and ", right)
-
-    print("list:", list, left, right, "lengths", len(left), len(right))
-    
-    # if len(left) == 2 and len(right) == 2:
+    # the final return will be halted until all recursion finished starting from the base.
 
     return merge(left, right)
 
@@ -45,9 +37,6 @@ def merge(left, right):
     Merges 2 lists/arrays, sorting them in the process
     Returns a new merged list
     """
-    # counter = 0
-    # counter += 1
-    # print(counter, " : ", left," and ", right)
 
     l = []
     i = 0 # left index
@@ -75,7 +64,16 @@ def merge(left, right):
 
     return l
 
-alist = [9,7,6,4, -4, 3]
-result = merge_sort(alist)
-# print(alist)
-print(result)
+list_unsorted = [9,7,6,4]
+sorted_list = merge_sort(list_unsorted)
+print(sorted_list)
+
+"""
+recursion stack structure for merge sorting of [*, *, *, *] 4 digits
+
+[*] vs [*]    [*] vs [*]    ---------------- Base Logic at top of the stack
+
+  [*, *]   vs   [*, *]     ---------------- Wait Until Base Logic/Comparison finished returning
+
+       [*,*,*,*]          ---------------- main caller wait for it's above return and finally returns the main
+"""

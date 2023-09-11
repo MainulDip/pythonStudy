@@ -38,7 +38,7 @@ Linked with
 - Doubly Linked List : carries both before/previous and after/next link/pointers
 
 
-### Merge Sort:
+### Merge Sort
 Has 3 main steps
 - Divide -> Find the midpoint of the list and divide into sublist
 - Conquer -> Recursive sort the sublist created in previous steps
