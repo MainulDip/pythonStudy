@@ -6,6 +6,11 @@ def merge_sort(list):
     : Divide -> Find the midpoint of the list and divide into sublist
     : Conquer -> Recursive sort the sublist created in previous step
     : Combine -> Merge the sorted sublist created in previous steps
+
+    Overall runtime is O(log n) * O(n) = O( n log n)
+    
+    Space Complexity: Takes O(n)/linear space as when new subsists are created,
+    the old list will not keep in memory.
     """
 
     # Base logic of recursive functions
@@ -24,6 +29,9 @@ def split(list):
     """
     Divide the unsorted list at midpoint into sublist
     Returns two sublist - left and right 
+    Should take overall O(log n) time
+    Bun in python slit operation (:) takes O(k log n)
+    Use iterative/while version to slice the array to achieve it on O(log n) linear time 
     """
 
     mid = len(list) // 2
@@ -36,6 +44,7 @@ def merge(left, right):
     """
     Merges 2 lists/arrays, sorting them in the process
     Returns a new merged list
+    Takes overall O(n) time
     """
 
     l = []
@@ -77,3 +86,20 @@ recursion stack structure for merge sorting of [*, *, *, *] 4 digits
 
        [*,*,*,*]          ---------------- main caller wait for it's above return and finally returns the main
 """
+
+def verify_sorted(list):
+    """
+    check if a supplied list is sorted or not.
+    """
+
+    listLength = len(list)
+
+    if listLength < 2 :
+        return True
+    
+    return list[0] < list[1] and verify_sorted(list[1:])
+
+result = verify_sorted(sorted_list)
+result2 = verify_sorted([2,3,1])
+print("the result is sorted : %s" % result)
+print("the result2 is sorted : %s" % result2)

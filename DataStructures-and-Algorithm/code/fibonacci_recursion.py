@@ -18,6 +18,7 @@ def getFibUpTo(number):
     return fibArr
 
 print(getFibUpTo(10))
+# will print: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
 """
 On recursive function the first return is stored at the bottom of the stack (main)
