@@ -270,7 +270,7 @@ def index(request):
     return render(request, 'polls/index.html', context)
 ```
 
-### Sending Dictionary As Context
+### Sending Dictionary As Context:
 
 
 ### Django Shortcut Methods:
