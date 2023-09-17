@@ -21,7 +21,7 @@ These are some approach to solve computation problem by
 
 NB: it does not come overnight, its practice.
 
-### Big O || O(n) :
+### Big O || O(n):
 Its the theoretical definition of the complexity of an algorithm as a function of the size. It's a notation used to describe complexity.
 O(n): Order of magnitude of complexity. n is "A function of the size". O(n) measures complexity as the input size grows (on the worst case scenario/n/Upper Bounds).
 

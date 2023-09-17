@@ -157,14 +157,14 @@ class LinkedList:
 
             return current
     
-l = LinkedList()
-l.add(1)
-l.add(2)
-l.add(3)
-n = l.search(3)
-print(n)
-# l.head = N1
-# print(l.size())
-# print("l.head.data: ", l.head.data)
-print("l.next_node: ", l.head.next_node)
-# print(l)
+# l = LinkedList()
+# l.add(1)
+# l.add(2)
+# l.add(3)
+# n = l.search(3)
+# print(n)
+# # l.head = N1
+# # print(l.size())
+# # print("l.head.data: ", l.head.data)
+# print("l.next_node: ", l.head.next_node)
+# # print(l)
