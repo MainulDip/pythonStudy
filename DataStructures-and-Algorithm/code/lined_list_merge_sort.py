@@ -7,13 +7,13 @@ def merge_sort(linked_list):
     - Repeatedly merge the sublist to produce sorted sublist until one remains
 
     Returns a sorted linked list
+    Takes overall O(kn log n) time
     """
 
 
     if linked_list.size() == 1:
         return linked_list
     elif linked_list.head is None: # if linked_list.size() == 0
-        print("called")
         return linked_list
     
     left_half, right_half = split(linked_list)
@@ -25,6 +25,7 @@ def merge_sort(linked_list):
 def split(linked_list):
     """
     Divide the unsorted list at midpoint into sublist
+    takes O(k log n)
     """
     # print(linked_list)
 
@@ -39,7 +40,7 @@ def split(linked_list):
         size = linked_list.size()
         mid = size // 2
         
-        mid_node = linked_list.node_at_index(mid-1)
+        mid_node = linked_list.node_at_index(mid-1) # takes O(k) time
 
         left_half = linked_list
         right_half = LinkedList() # will assign as head for fist node of right half
@@ -53,6 +54,7 @@ def merge(left, right):
     """
     Merges two linked lists, sorting by data in nodes
     Returns a new, merged list
+    takes O(n) constant time
     """
 
     # Create a new linked list that contains nodes from

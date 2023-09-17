@@ -46,3 +46,7 @@ Has 3 main steps
 
 NB:
 - Naively Sorted: when an array/list element has 0 or 1 element inside
+### Bogo Sort (inefficient searching):
+It's a randomized searching algorithm. the provided list is randomized to get a sorted list. It can take a variable amount of time/iteration to sort a list. Which is not consistent. And for bigger amount of number, it can fail to sort the numbers.
+
+### Selection Sort (slow but better than bogo sort):
