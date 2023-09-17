@@ -50,3 +50,13 @@ NB:
 It's a randomized searching algorithm. the provided list is randomized to get a sorted list. It can take a variable amount of time/iteration to sort a list. Which is not consistent. And for bigger amount of number, it can fail to sort the numbers.
 
 ### Selection Sort (slow but better than bogo sort):
+This iterate over every element of a list and compare with every item to find the lowest value. the lowest value then is popped form the array and appended into a new array. The comparison will continue until all the elements are compared and popped. End result is a sorted array returned.
+- Takes O(n^2) time
+
+* Slow as it has to iterate over every elements several times
+### Quick Sort:
+It's a recursive algorithm to sort a list.
+- Best Case : O(n log n)
+- Worst Case : O(n^2) || if the pivot point is always the worst case
+
+In real-life, quick sort is more used than merge sort

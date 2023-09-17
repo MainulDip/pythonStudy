@@ -17,3 +17,4 @@ def index_of_min(values):
 some_list = [4,3,2,1]
 sorted = selection_sort(some_list)
 print(sorted)
+# time python selection_sort.py || to get the time to complete this programme
