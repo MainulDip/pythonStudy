@@ -40,8 +40,9 @@ print("Factorial of number", num, "=", recursive_factorial(num))
 It is used to solve/get the number of possible arrangements of a given value.
 
 For example, let's see all the arrangements we can have with the three items, A, B and C : ABC, ACB, BAC, BCA, CAB, CBA = 3! = 6
-### Tail Optimization (Recursion):
+### Tail Optimization (Recursion) :
 When (in recursive function) call itself as the last call of the function, it will considered as tail call, all other calls other than the last return will be considered head call. Some compiler provide pre-build features to handle tail recursion to be memory optimized.
+
 
 In this case tail optimization only works on supported language compilers (like JS, Java, Swift, etc).
 

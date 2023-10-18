@@ -274,7 +274,7 @@ def index(request):
 
 
 ### Django Shortcut Methods:
-Official Docs: https://docs.djangoproject.com/en/4.0/topics/http/shortcuts/.
+Official Docs: https://docs.djangoproject.com/en/4.0/topics/http/shortcuts/
 
 - get_object_or_404(klass, *args, **kwargs)
 ### Terms:

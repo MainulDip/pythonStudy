@@ -60,3 +60,14 @@ It's a recursive algorithm to sort a list.
 - Worst Case : O(n^2) || if the pivot point is always the worst case
 
 In real-life, quick sort is more used than merge sort
+
+### Data Structures to check:
+- Stack (Lifo)
+- Queue (Fifo) & Priority Queue
+- Hash Table (Hash-Map/Dictionary)
+- Tree
+- Graph
+### Algorithms to check:
+- Dynamic Programming (DP)
+- Tree algorithm
+- Graph algorithm

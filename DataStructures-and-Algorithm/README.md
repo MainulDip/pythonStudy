@@ -26,7 +26,7 @@ Its the theoretical definition of the complexity of an algorithm as a function o
 O(n): Order of magnitude of complexity. n is "A function of the size". O(n) measures complexity as the input size grows (on the worst case scenario/n/Upper Bounds).
 
 ### Efficiency of Algorithm:
-- Efficiency (Time): Time Complexity (how long does it take to complete a task). or Runtime Complexity
+- Efficiency (Time): Time Complexity (how long does it take to complete a task). or Runtime Complexity.
 
 - Efficiently (Space): Space Complexity (how much memory it consume to complete a task)
 
